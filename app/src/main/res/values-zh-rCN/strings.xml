@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">DirtyPipeCheck</string>
+    <string name="desc">说明：绿色代表设备可以用 DirtyPipe(https://github.com/polygraphene/DirtyPipe-Android) 获取临时 Root，红色则意味着不行。</string>
 </resources>

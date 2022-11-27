@@ -13,8 +13,17 @@
         android:layout_height="0dp"/>
 
     <TextView
+        android:text="@string/desc"
+        android:textSize="12sp"
+        android:autoLink="web"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
         android:text="@string/author"
-        android:textSize="24sp"
+        android:autoLink="web"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 </LinearLayout>

@@ -2,6 +2,7 @@ package me.weishu.dirtypipecheck;
 
 import android.app.Activity;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
@@ -43,20 +44,32 @@ public class MainActivity extends Activity {
 
             Check.check(tmpfile.getAbsolutePath());
 
-
+            String content = "";
             try {
-                String content = new String(Files.readAllBytes(tmpfile.toPath()));
-                Log.w(TAG, "content: " + content);
-                boolean vunlerable = content.contains("test");
-
-                Analytics.trackEvent("vunlerable", new HashMap<String, String>() {{
-                    put("vunlerable", String.valueOf(vunlerable));
-                }});
-
-                button.setBackgroundColor(vunlerable ? Color.GREEN : Color.RED);
-            } catch (IOException e) {
-                Log.e(TAG, "err", e);
+                content = new String(Files.readAllBytes(tmpfile.toPath()));
+            } catch (IOException ignored) {
             }
+
+            Log.w(TAG, "content: " + content);
+            boolean vulnerable = content.contains("test");
+
+            if (vulnerable) {
+                Analytics.trackEvent("vulnerable", new HashMap<String, String>() {{
+                    put("product", Build.PRODUCT);
+                    put("model", Build.MODEL);
+                    put("fingerprint", Build.FINGERPRINT);
+                    put("os", System.getProperty("os.version"));
+                }});
+            } else {
+                Analytics.trackEvent("invulnerable", new HashMap<String, String>() {{
+                    put("product", Build.PRODUCT);
+                    put("model", Build.MODEL);
+                    put("fingerprint", Build.FINGERPRINT);
+                    put("os", System.getProperty("os.version"));
+                }});
+            }
+
+            button.setBackgroundColor(vulnerable ? Color.GREEN : Color.RED);
         });
     }
 }

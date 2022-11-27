@@ -9,6 +9,7 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-    <string name="author">Author: weishu \n contact: https://github.com/tiann</string>
+    <string name="author">Author: weishu \nContact me: https://github.com/tiann/DirtyPipeCheck</string>
     <string name="checkit">开始检测</string>
+    <string name="desc">Description: Green means this device is vulnerable using DirtyPipe(https://github.com/polygraphene/DirtyPipe-Android), red is invulnerable</string>
 </resources>
