@@ -2,4 +2,9 @@
 <resources>
     <string name="app_name">DirtyPipeCheck</string>
     <string name="desc">说明：绿色代表设备可以用 DirtyPipe(https://github.com/polygraphene/DirtyPipe-Android) 获取临时 Root，红色则意味着不行。</string>
+    <string name="get_root">获取 ROOT</string>
+    <string name="get_root_confirm">接下来的操作可能会让的手机变砖，也有可能导致你手机内部的数据完全丢失，确认要继续 ROOT 吗？</string>
+    <string name="i_know_it">确认</string>
+    <string name="about">关于</string>
+    <string name="vulnerable_tips">你的设备可通过 DirtyPipe 获取 ROOT 权限，点击右上角菜单继续。</string>
 </resources>

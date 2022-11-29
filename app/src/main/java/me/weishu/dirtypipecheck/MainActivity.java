@@ -1,10 +1,14 @@
 package me.weishu.dirtypipecheck;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.Button;
 
 import com.microsoft.appcenter.AppCenter;
@@ -70,6 +74,48 @@ public class MainActivity extends Activity {
             }
 
             button.setBackgroundColor(vulnerable ? Color.GREEN : Color.RED);
+
+            if (vulnerable) {
+                new AlertDialog.Builder(this)
+                        .setTitle(android.R.string.dialog_alert_title)
+                        .setMessage(R.string.vulnerable_tips)
+                        .setPositiveButton(android.R.string.ok, (dialog, which) -> dialog.dismiss())
+                        .show();
+            }
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+
+        MenuItem item = menu.findItem(R.id.memu_getroot);
+        item.setOnMenuItemClickListener(item1 -> {
+
+            new AlertDialog.Builder(this)
+                    .setTitle(android.R.string.dialog_alert_title)
+                    .setMessage(R.string.get_root_confirm)
+                    .setPositiveButton(R.string.i_know_it, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            Check.getRoot(MainActivity.this);
+                        }
+                    })
+                    .setNegativeButton(android.R.string.cancel, null)
+                    .show();
+            return true;
+        });
+
+        MenuItem about = menu.findItem(R.id.menu_about);
+        about.setOnMenuItemClickListener(item1 -> {
+
+            new AlertDialog.Builder(this)
+                    .setTitle(R.string.about)
+                    .setMessage(R.string.author)
+                    .show();
+            return true;
+        });
+
+        return super.onCreateOptionsMenu(menu);
     }
 }

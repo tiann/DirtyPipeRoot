@@ -12,4 +12,9 @@
     <string name="author">Author: weishu \nContact me: https://github.com/tiann/DirtyPipeCheck</string>
     <string name="checkit">开始检测</string>
     <string name="desc">Description: Green means this device is vulnerable using DirtyPipe(https://github.com/polygraphene/DirtyPipe-Android), red is invulnerable</string>
+    <string name="get_root">Get Root</string>
+    <string name="get_root_confirm">This may brick your device and cuase your data loss, continue?</string>
+    <string name="i_know_it">Confirm it</string>
+    <string name="about">About</string>
+    <string name="vulnerable_tips">Your device can gain root by DirtyPipe, Click Settings to continue.</string>
 </resources>

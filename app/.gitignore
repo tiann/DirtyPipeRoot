@@ -1,1 +1,6 @@
 /build
+/src/main/assets/magisk/
+/src/main/assets/startup-root
+/src/main/jniLibs/arm64-v8a/libdirtypipe.so
+/src/main/assets/env-patcher
+/release/
