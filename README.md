@@ -1,6 +1,6 @@
 # DirtyPipeRoot
 
-Using []DirtyPipe](https://github.com/polygraphene/DirtyPipe-Android) to gain temporary root access for Android devices.
+Using [DirtyPipe](https://github.com/polygraphene/DirtyPipe-Android) to gain temporary root access for Android devices.
 
 ## Warning
 
