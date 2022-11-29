@@ -10,8 +10,8 @@ android {
         applicationId "me.weishu.dirtypipecheck"
         minSdk 28
         targetSdk 32
-        versionCode 200
-        versionName "2.0"
+        versionCode 201
+        versionName "2.1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         externalNativeBuild {
