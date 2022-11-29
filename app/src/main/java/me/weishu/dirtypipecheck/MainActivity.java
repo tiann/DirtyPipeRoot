@@ -2,7 +2,6 @@ package me.weishu.dirtypipecheck;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
@@ -95,12 +94,8 @@ public class MainActivity extends Activity {
             new AlertDialog.Builder(this)
                     .setTitle(android.R.string.dialog_alert_title)
                     .setMessage(R.string.get_root_confirm)
-                    .setPositiveButton(R.string.i_know_it, new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            Check.getRoot(MainActivity.this);
-                        }
-                    })
+                    .setPositiveButton(R.string.i_know_it,
+                            (dialog, which) -> Check.getRoot(MainActivity.this, getWindow()))
                     .setNegativeButton(android.R.string.cancel, null)
                     .show();
             return true;

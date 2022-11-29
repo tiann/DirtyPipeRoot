@@ -2,14 +2,16 @@ package me.weishu.dirtypipecheck;
 
 import android.content.Context;
 import android.content.res.AssetManager;
-import android.net.wifi.WifiManager;
 import android.util.Log;
+import android.view.Window;
+import android.view.WindowManager;
 
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
+import java.util.Random;
 
 /**
  * @author weishu
@@ -26,7 +28,7 @@ public final class Check {
 
     public static native void check(String path);
 
-    public static void getRoot(Context context) {
+    public static void getRoot(Context context, Window window) {
 
         File baseDir = new File(context.getCacheDir(), "dirtypipe");
         if (!baseDir.exists()) {
@@ -45,9 +47,10 @@ public final class Check {
         ShellUtils.CommandResult commandResult = ShellUtils.execCmd(cmd, false);
         Log.i(TAG, "result: " + commandResult);
 
-        WifiManager wifiManager = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
-        boolean enabled = wifiManager.isWifiEnabled();
-        wifiManager.setWifiEnabled(!enabled);
+        // trigger init property change!
+        WindowManager.LayoutParams lp = window.getAttributes();
+        lp.screenBrightness = new Random().nextFloat();
+        window.setAttributes(lp);
     }
 
     @SuppressWarnings("ResultOfMethodCallIgnored")
