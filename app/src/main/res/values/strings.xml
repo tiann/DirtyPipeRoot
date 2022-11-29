@@ -1,20 +1,14 @@
 <resources>
-    <string name="app_name">DirtyPipeCheck</string>
-    <string name="action_settings">Settings</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
+    <string name="app_name">DirtyPipeRoot</string>
 
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-    <string name="author">Author: weishu \nContact me: https://github.com/tiann/DirtyPipeCheck</string>
-    <string name="checkit">开始检测</string>
+    <string name="author" translatable="false">Author: weishu \nContact me: https://github.com/tiann/DirtyPipeCheck</string>
     <string name="desc">Description: Green means this device is vulnerable using DirtyPipe(https://github.com/polygraphene/DirtyPipe-Android), red is invulnerable</string>
     <string name="get_root">Get Root</string>
     <string name="get_root_confirm">This may brick your device and cuase your data loss, continue?</string>
     <string name="i_know_it">Confirm it</string>
     <string name="about">About</string>
     <string name="vulnerable_tips">Your device can gain root by DirtyPipe, Click Settings to continue.</string>
+    <string name="get_root_tips" >Please wait about 30s, and the Magisk would be installed. Warning:\n 1. Don\'t use install button on magisk app. It will brick your phone.\n 2. Don\'t reboot even if Magisk app request. It will lose temporary root.\n 3. Only support root access. No magisk/zygisk modules support.</string>
+    <string name="get_root_tips2">Please confirm again that you should not INSTALL Magisk in Magisk App!!!! YOUR DEVICE WOULD BE BRICK !!!</string>
+    <string name="checkit">Check</string>
 </resources>

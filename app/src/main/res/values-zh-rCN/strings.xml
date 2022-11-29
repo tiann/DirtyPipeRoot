@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">DirtyPipeCheck</string>
+    <string name="app_name">DirtyPipeRoot</string>
     <string name="desc">说明：绿色代表设备可以用 DirtyPipe(https://github.com/polygraphene/DirtyPipe-Android) 获取临时 Root，红色则意味着不行。</string>
     <string name="get_root">获取 ROOT</string>
     <string name="get_root_confirm">接下来的操作可能会让的手机变砖，也有可能导致你手机内部的数据完全丢失，确认要继续 ROOT 吗？</string>
     <string name="i_know_it">确认</string>
     <string name="about">关于</string>
     <string name="vulnerable_tips">你的设备可通过 DirtyPipe 获取 ROOT 权限，点击右上角菜单继续。</string>
+    <string name="get_root_tips" >请等待大约 30 秒，Magisk 将自动安装完成；警告：\n1. 不要在 Magisk 内部执行任何安装操作，如果你的手机没有解锁，手机必定变砖，只能找售后解决。\n2. Magisk 如果提示你需要重启，请忽略它。\n3. Magisk 内只有 ROOT 可以使用，模块和 Zygisk 无法使用。</string>
+    <string name="get_root_tips2">请再次确认：不要在 Magisk 内部执行安装操作，如果你的手机没解锁，必定会变砖！！！！</string>
+    <string name="checkit">开始检测</string>
 </resources>

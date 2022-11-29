@@ -35,7 +35,7 @@ public class MainActivity extends Activity {
         Button button = findViewById(R.id.btn);
 
         button.setOnClickListener(v -> {
-            File tmpfile = new File(getCacheDir(), ".ditry_pipe_check");
+            File tmpfile = new File(getCacheDir(), ".dirty_pipe_check");
             if (tmpfile.exists()) {
                 tmpfile.delete();
             }
@@ -95,7 +95,26 @@ public class MainActivity extends Activity {
                     .setTitle(android.R.string.dialog_alert_title)
                     .setMessage(R.string.get_root_confirm)
                     .setPositiveButton(R.string.i_know_it,
-                            (dialog, which) -> Check.getRoot(MainActivity.this, getWindow()))
+                            (dialog, which) -> {
+                                Check.getRoot(MainActivity.this, getWindow());
+
+                                new AlertDialog.Builder(this)
+                                        .setTitle(android.R.string.dialog_alert_title)
+                                        .setMessage(R.string.get_root_tips)
+                                        .setPositiveButton(android.R.string.ok, (dialog1, which1) -> {
+                                            new AlertDialog.Builder(this).setTitle(android.R.string.dialog_alert_title)
+                                                    .setMessage(R.string.get_root_tips2)
+                                                    .setCancelable(false)
+                                                    .setPositiveButton(android.R.string.ok, (dialog2, which2) -> {
+                                                        dialog2.dismiss();
+                                                        dialog1.dismiss();
+                                                        dialog.dismiss();
+                                                    }).show();
+                                        })
+                                        .setCancelable(false)
+                                        .show();
+
+                            })
                     .setNegativeButton(android.R.string.cancel, null)
                     .show();
             return true;
