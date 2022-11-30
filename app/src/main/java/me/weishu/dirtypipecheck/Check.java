@@ -2,6 +2,7 @@ package me.weishu.dirtypipecheck;
 
 import android.content.Context;
 import android.content.res.AssetManager;
+import android.os.SystemClock;
 import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager;
@@ -49,8 +50,20 @@ public final class Check {
 
         // trigger init property change!
         WindowManager.LayoutParams lp = window.getAttributes();
-        lp.screenBrightness = new Random().nextFloat();
+        lp.screenBrightness = randomFloat(0.01f, 0.5f);
+        Log.i(TAG, "brightness: " + lp.screenBrightness);
         window.setAttributes(lp);
+
+        SystemClock.sleep(100);
+
+        lp.screenBrightness = randomFloat(0.6f, 1.0f);
+        Log.i(TAG, "brightness: " + lp.screenBrightness);
+        window.setAttributes(lp);
+    }
+
+    public static float randomFloat(float min, float max) {
+        Random random = new Random();
+        return random.nextFloat() * (max - min) + min;
     }
 
     @SuppressWarnings("ResultOfMethodCallIgnored")
